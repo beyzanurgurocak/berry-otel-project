@@ -1,0 +1,6 @@
+#image-local{
+    transition: transform .2s; 
+}
+#image-local:hover{
+  transform: scale(1.3);
+}
