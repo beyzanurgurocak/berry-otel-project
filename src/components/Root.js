@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardHeader, CardBody } from "reactstrap";
+import { Card, CardHeader, CardBody, Row ,Col, Container} from "reactstrap";
 import DropDown from "./DropDown";
 import { allData } from "../data/index";
 import Table from "./Table";
@@ -88,13 +88,15 @@ const Root = () => {
     await getLogos();
   };
   return (
-    <div className="d-flex w-100 justify-content-start align-items-start p-5">
-      <Card className="w-100 mx-5">
+<Container>
+  <Row>
+    <Col xs={12} md={8} className="mx-auto">
+      <Card className="mx-3 my-5">
         <CardHeader>
           <h3>Otel Filtreleme Ekranı</h3>
         </CardHeader>
-        <CardBody className="p-5 d-flex justify-content-center align-items-center flex-column">
-          <div className="d-flex gap-2">
+        <CardBody className="d-flex flex-column justify-content-center align-items-center">
+          <div className="d-flex flex-wrap justify-content-center gap-2">
             <DropDown
               text={"Bilgi Formu"}
               data={allData.languageDropdownData}
@@ -112,8 +114,11 @@ const Root = () => {
             />
             <ButtonCard text="Logolar" handleClick={handleLogoClick} />
           </div>
-          <hr />
-          <div style={{ maxHeight: "400px", overflow: "auto", width: "100%" }}>
+          <hr className="w-100" />
+          <div
+            className="overflow-auto"
+            style={{ maxHeight: "400px", width: "100%" }}
+          >
             {languageData.length > 0 && <Table data={languageData} />}
             {imageData.length > 0 && <ImageCard data={imageData} />}
             {videos.length > 0 && <VideoTable data={videos} />}
@@ -122,7 +127,10 @@ const Root = () => {
           </div>
         </CardBody>
       </Card>
-    </div>
+    </Col>
+  </Row>
+</Container>
+
   );
 };
 

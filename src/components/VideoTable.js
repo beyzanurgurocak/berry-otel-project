@@ -15,7 +15,6 @@ const VideoTable = ({ data }) => {
     setIsOpenModal(!isOpenModal);
   };
   useEffect(() => {
-    debugger;
     setAllData(data);
   }, [data]);
   const downloadVideos = (urls) => {
@@ -49,7 +48,6 @@ const VideoTable = ({ data }) => {
   };
 
   const handleAllChecked = (e) => {
-    debugger;
     const checkedAllData = allData.map((item) => {
       return {
         ...item,
@@ -61,7 +59,6 @@ const VideoTable = ({ data }) => {
     else setSelectedItems([]);
   };
   const handleChecked = (e, id) => {
-    debugger;
     const newArr = allData.filter((x) => {
       if (x.id === id) x.isChecked = e.target.checked;
       return x;

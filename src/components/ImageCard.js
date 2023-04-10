@@ -14,7 +14,6 @@ const ImageCard = ({ data }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState({});
   const toggleModal = (item) => {
-    debugger;
     setSelectedImage(item);
     setIsOpenModal(!isOpenModal);
   };
@@ -47,7 +46,7 @@ const ImageCard = ({ data }) => {
   }
   return (
     <>
-      <div className="d-flex justify-content-center gap-2 flex-wrap">
+      <div  className="d-flex justify-content-center gap-2 flex-wrap">
         {data.map((item, index) => {
           return (
             <Card

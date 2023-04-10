@@ -7,11 +7,9 @@ const GenericTable = ({ data }) => {
   const [selectedItems, setSelectedItems] = useState([]);
 
   useEffect(() => {
-    debugger;
     setAllData(data);
   }, [data]);
   const downloadPdf = (urls) => {
-    debugger;
     if (!Array.isArray(urls)) {
       urls = [urls];
     }

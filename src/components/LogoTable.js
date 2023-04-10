@@ -7,7 +7,6 @@ const LogoTable = ({ data }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   useEffect(() => {
-    debugger;
     setAllData(data);
   }, [data]);
   const downloadLogos = (urls) => {
@@ -40,7 +39,6 @@ const LogoTable = ({ data }) => {
   };
 
   const handleAllChecked = (e) => {
-    debugger;
     const checkedAllData = allData.map((item) => {
       return {
         ...item,
@@ -52,7 +50,6 @@ const LogoTable = ({ data }) => {
     else setSelectedItems([]);
   };
   const handleChecked = (e, id) => {
-    debugger;
     const newArr = allData.filter((x) => {
       if (x.id === id) x.isChecked = e.target.checked;
       return x;
